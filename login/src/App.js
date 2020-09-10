@@ -7,13 +7,14 @@ import Teste from './screens/Teste';
 
 const Stack = createStackNavigator();
 
-const MyStack = () => {
+function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Teste">
-        <Stack.Screen component={Login}/>
-        <Stack.Screen component={Teste} />
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Teste" component={Teste} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
+}
+export default App;

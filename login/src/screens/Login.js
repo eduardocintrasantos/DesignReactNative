@@ -16,7 +16,7 @@ import Routes from '../App'
 import Teste from './Teste'
 
 
-export default function Login() {
+export default function Login({navigation} ) {
   return (
     <ScrollView style={styles.container}>
       <View>
@@ -57,7 +57,7 @@ export default function Login() {
 
       <Text style={[styles.text, {fontSize: 14, color: "#ABB4BD", textAlign: "center", marginVertical: 24,}]}>
         Don't have an account? <Text style={styles.text, styles.link}
-                                onPress={() => {alert("Register")}}>Register Now</Text></Text>
+                                onPress={() => navigation.navigate('Teste')}>Register Now</Text></Text>
     </ScrollView>
   );
 };
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30
   },
   logo: {
-    marginTop: 50,
+    marginTop: 30,
     alignItems: "center",
     justifyContent: "center"
   },
