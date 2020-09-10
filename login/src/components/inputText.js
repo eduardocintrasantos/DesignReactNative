@@ -7,7 +7,7 @@ export default class InputText extends React.Component {
             <View style={this.props.style}>
                 <Text styles={styles.inputTitle}>{this.props.title}</Text>
                 <TextInput
-                    onChangeText={text => onChangeText(text)}
+                    onChangeText={text => this.setState({text})}
                     secureTextEntry={this.props.isSecure}
                     style={StyleSheet.input}>    
                 </TextInput>

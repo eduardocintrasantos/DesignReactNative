@@ -4,38 +4,38 @@ import {
   ScrollView,
   View,
   Text,
-  StatusBar,
   TouchableOpacity,
   Image, 
-  Button,
-  Alert
+  Alert,
 } from 'react-native';
-import Icon from 'react-native-ionicons'
-import Logo from './assets/logo.png'
-
-import InputText from './src/components/inputText'
 
 
-export default function App() {
+import InputText from '../components/inputText'
+import Routes from '../App'
+
+import Teste from './Teste'
+
+
+export default function Login() {
   return (
     <ScrollView style={styles.container}>
       <View>
         <View style={styles.logo}>
-          <Image source={require('./assets/logo.png')}  style={{width: 150, height: 150}}/>
+          <Image source={require('../../assets/logo.png')}  style={{width: 150, height: 150}}/>
         </View>
       </View>
 
       <View style={{marginTop: 20, flexDirection:"row", justifyContent: "center"}}>
-        <TouchableOpacity>
+        <TouchableOpacity  onPress={() => {alert('Facebook')}}>
           <View style={styles.socialNetworks}>
-            <Image source={require('./assets/logo-face.png')} style={styles.logoSocial} />
+            <Image source={require('../../assets/logo-face.png')} style={styles.logoSocial} />
             <Text style={styles.text}>Facebook</Text>
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {alert('Google')}}>
           <View style={styles.socialNetworks}>
-            <Image source={require('./assets/logo-google.png')} style={styles.logoSocial} />
+            <Image source={require('../../assets/logo-google.png')} style={styles.logoSocial} />
             <Text style={styles.text}>Google</Text>
           </View>
         </TouchableOpacity>
@@ -49,14 +49,15 @@ export default function App() {
         title="Password"
         isSecure={true}></InputText>
 
-      <Text style={[styles.text, styles.link, {textAlign:"right"}]}>Forgot Password?</Text>
+      <Text style={[styles.text, styles.link, {textAlign:"right"}]} onPress={() => {alert('Esqueceu a senha')}}>Forgot Password?</Text>
 
-      <TouchableOpacity style={styles.submitContainer}>
+      <TouchableOpacity style={styles.submitContainer} onPress={() => {alert('Logando')}}>
         <Text style={[styles.text, {color: "#fff", fontSize:15}]}>Login</Text>
       </TouchableOpacity>
 
-      <Text style={[styles.text, {fontSize: 14, color: "#ABB4BD", textAlign: "center", marginTop: 24}]}>
-        Don't have an account? <Text style={styles.text, styles.link}>Register Now</Text></Text>
+      <Text style={[styles.text, {fontSize: 14, color: "#ABB4BD", textAlign: "center", marginVertical: 24,}]}>
+        Don't have an account? <Text style={styles.text, styles.link}
+                                onPress={() => {alert("Register")}}>Register Now</Text></Text>
     </ScrollView>
   );
 };
